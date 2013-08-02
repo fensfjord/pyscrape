@@ -7,13 +7,11 @@ try:
 except ImportError:
     # for Python3
     import tkinter as tk
-    
-import tkfiledialog
 
 root = tk.Tk()
 root.withdraw()
 
-file_path = tkFileDialog.askopenfilename(filetypes=[('text files', '.txt'),('all files', '.*')])
+file_path = tk.askopenfilename(filetypes=[('text files', '.txt'),('all files', '.*')])
 
 file = open(file_path)
 outfile = open(str(os.getcwd())+'/CPDout.txt','w')
