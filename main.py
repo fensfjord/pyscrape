@@ -4,14 +4,17 @@ import os
 try:
     # for Python2
     import Tkinter as tk
+    from tkFileDialog import askopenfilename
 except ImportError:
     # for Python3
     import tkinter as tk
+    from tkinter.filedialog import askopenfilename    
+
 
 root = tk.Tk()
 root.withdraw()
 
-file_path = tk.askopenfilename(filetypes=[('text files', '.txt'),('all files', '.*')])
+file_path = askopenfilename(filetypes=[('text files', '.txt'),('all files', '.*')])
 
 file = open(file_path)
 outfile = open(str(os.getcwd())+'/CPDout.txt','w')
